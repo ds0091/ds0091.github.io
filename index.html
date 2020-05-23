@@ -3,7 +3,26 @@
     <meta charset="utf-8">
     <title>Twitch Bot Authorize Page</title>
   </head>
+
   <body>
-    <a href="https://www.mozilla.org/zh-TW/about/manifesto/">Twitch Bot Authorize</a>
+    <a href="" id="authorize">Authorize</a>
+    <div id="access_token"></div>
+    <div id="user_data"></div>
+
+    <script type="text/javascript">
+        var client_id = '45tajtul37sy2stouvoz0z05frrt52';
+        var redirect = 'http://127.0.0.1/';
+
+        document.getElementById('authorize').setAttribute('href', 'https://id.twitch.tv/oauth2/authorize?client_id=' + client_id + '&redirect_uri=' + encodeURIComponent(redirect) + '&response_type=token')
+        document.getElementById('access_token').textContent = '';
+
+        if (document.location.hash) {
+            var parsedHash = new URLSearchParams(window.location.hash.substr(1));
+            if (parsedHash.get('access_token')) {
+                var access_token = parsedHash.get('access_token');
+                document.getElementById('access_token').textContent = 'Your Access Key from the #url: ' + access_token;
+            }
+        }
+    </script>
   </body>
 </html>
