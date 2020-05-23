@@ -5,13 +5,13 @@
   </head>
 
   <body>
-    <a href="" id="authorize">Authorize</a>
+    <a href="" id="authorize">Twitch Bot Authorize</a>
     <div id="access_token"></div>
     <div id="user_data"></div>
 
     <script type="text/javascript">
         var client_id = '45tajtul37sy2stouvoz0z05frrt52';
-        var redirect = 'http://127.0.0.1/';
+        var redirect = 'ds0091.github.io';
 
         document.getElementById('authorize').setAttribute('href', 'https://id.twitch.tv/oauth2/authorize?client_id=' + client_id + '&redirect_uri=' + encodeURIComponent(redirect) + '&response_type=token')
         document.getElementById('access_token').textContent = '';
